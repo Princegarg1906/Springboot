@@ -22,4 +22,8 @@ public class DetailsService {
 		return detailsRepository.findByName(Fname,Lname);
 	}
 	
+	public Optional<Details> findId(int Id) {
+		return detailsRepository.findById(Id);
+	}
+	
 }

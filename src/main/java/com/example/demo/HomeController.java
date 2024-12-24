@@ -26,6 +26,7 @@ public class HomeController {
 	@GetMapping("/index")
 	public ModelAndView home(@RequestParam("Firstname") String FName,@RequestParam("Lastname") String Lname)
 	{
+		// String FName=request.getParameter("Firstname");
 		ModelAndView mv=new ModelAndView();
 		Details details = new Details();
 		details.setFirstName(FName);
@@ -38,10 +39,5 @@ public class HomeController {
 		return mv;
 	}
 	
-	@GetMapping("/view")
-	public ResponseEntity<Details> getdata() {
-		return detailsService.find("Prince","garg")
-        .map(ResponseEntity::ok)
-        .orElseGet(() -> ResponseEntity.notFound().build());
-	}
+	
 }
